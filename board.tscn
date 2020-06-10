@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://board.gd" type="Script" id=1]
+[ext_resource path="res://ParallaxBackground.gd" type="Script" id=2]
+[ext_resource path="res://bg.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -0.419113, -0.523224 )
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 567.0
+margin_bottom = 609.0
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -170.0
+margin_top = -184.5
+margin_right = 170.0
+margin_bottom = 184.5
+mouse_filter = 2
+custom_constants/vseparation = 3
+columns = 3
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 850, 850 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 430, 420 )
+texture = ExtResource( 3 )
